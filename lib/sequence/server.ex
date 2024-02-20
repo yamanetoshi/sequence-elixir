@@ -1,6 +1,8 @@
 defmodule Sequence.Server do
   use GenServer
 
+  @vsn "0"
+
   #####
   # 外部 API
   def start_link(_) do
@@ -8,7 +10,7 @@ defmodule Sequence.Server do
   end
 
   def next_number do
-    GenServer.call __MODULE__, :next_number
+    GenServer.call(__MODULE__, :next_number),
   end
 
   def increment_number(delta) do
